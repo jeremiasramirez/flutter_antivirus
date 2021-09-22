@@ -7,5 +7,6 @@ ZoomIn logoApp(double margin, double size) {
       child: Container(
           margin: EdgeInsets.only(bottom: margin),
           decoration: BoxDecoration(),
-          child: Icon(Icons.whatshot, size: size, color: Colors.grey[300])));
+          child: Icon(Icons.local_fire_department,
+              size: size, color: Colors.deepOrange[900])));
 }

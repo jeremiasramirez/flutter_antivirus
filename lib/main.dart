@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Fire virus',
-        initialRoute: "loading",
+        initialRoute: "home",
         routes: {
           "loading": (context) => LoadingFirePage(),
           "home": (context) => HomeFirePage(),
