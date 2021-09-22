@@ -1,3 +1,4 @@
+import 'package:fire_antivirus/widgets/loading/items.loading.dart';
 import 'package:flutter/material.dart';
 
 class LoadingFirePage extends StatefulWidget {
@@ -6,6 +7,9 @@ class LoadingFirePage extends StatefulWidget {
 
 class LoadingFireState extends State<LoadingFirePage> {
   Widget build(context) {
-    return Text("klk");
+    return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: Scaffold(
+            backgroundColor: Colors.grey[900], body: Center(child: Items())));
   }
 }

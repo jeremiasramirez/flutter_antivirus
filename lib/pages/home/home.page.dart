@@ -6,6 +6,15 @@ class HomeFirePage extends StatefulWidget {
 
 class HomeFireState extends State<HomeFirePage> {
   Widget build(context) {
-    return Text("Home");
+    return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: Scaffold(
+            body: Column(
+          children: [
+            // menu
+
+            // services
+          ],
+        )));
   }
 }
