@@ -10,20 +10,29 @@ class MenuHomeState extends State<MenuHome> {
   Widget build(context) {
     return Container(
         width: 75,
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.only(
-                topRight: Radius.circular(5), bottomRight: Radius.circular(5)),
-            color: Color.fromRGBO(20, 20, 20, .7)),
+        decoration: this.decorate(),
         child: ListView(
           physics: ScrollPhysics(),
-          children: [
-            ItemsMenu(Icons.security, "Status").selected(),
-            ItemsMenu(Icons.lock, "Protection"),
-            ItemsMenu(Icons.fingerprint, "Privacy"),
-            ItemsMenu(Icons.speed, "Tuned UP"),
-            ItemsMenu(Icons.ac_unit, "CPU"),
-            ItemsMenu(Icons.settings, "Settings")
-          ],
+          children: this.insertItems(),
         ));
+  }
+
+  BoxDecoration decorate() {
+    return BoxDecoration(
+        borderRadius: BorderRadius.only(
+            topRight: Radius.circular(5), bottomRight: Radius.circular(5)),
+        color: Color.fromRGBO(20, 20, 20, .7));
+  }
+
+  dynamic insertItems() {
+    return [
+      ItemsMenu(Icons.security, "Status").selected(),
+      ItemsMenu(Icons.lock, "Protection"),
+      ItemsMenu(Icons.fingerprint, "Privacy"),
+      ItemsMenu(Icons.speed, "Tuned UP"),
+      ItemsMenu(Icons.ac_unit, "CPU"),
+      ItemsMenu(Icons.settings_remote, "Remote"),
+      ItemsMenu(Icons.settings, "Settings")
+    ];
   }
 }
