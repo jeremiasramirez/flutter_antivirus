@@ -7,9 +7,21 @@ class LoadingFirePage extends StatefulWidget {
 
 class LoadingFireState extends State<LoadingFirePage> {
   Widget build(context) {
+    // routing
+    this.toHome(context);
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         home: Scaffold(
             backgroundColor: Colors.grey[900], body: Center(child: Items())));
+  }
+
+  void toHome(context) {
+    Future delays = Future.delayed(Duration(seconds: 2), () {
+      return true;
+    });
+
+    delays.then((dynamic value) {
+      Navigator.pushReplacementNamed(context, "home");
+    });
   }
 }
