@@ -9,7 +9,7 @@ class MenuHome extends StatefulWidget {
 class MenuHomeState extends State<MenuHome> {
   Widget build(context) {
     return Container(
-        width: 75,
+        width: 79,
         decoration: this.decorate(),
         child: ListView(
           physics: ScrollPhysics(),

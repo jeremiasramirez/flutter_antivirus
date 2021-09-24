@@ -8,32 +8,36 @@ class ItemsMenu extends StatelessWidget {
   ItemsMenu(this.icon, this.text);
   Widget build(context) {
     return Container(
-        padding: EdgeInsets.only(top: 18, bottom: 4),
-        margin: EdgeInsets.only(top: 0, bottom: 0),
+        padding: EdgeInsets.only(top: 0, bottom: 8),
+        // margin: EdgeInsets.only(top: 0, bottom: 0),
         alignment: Alignment.center,
-        width: 100,
+        width: 105,
         height: 80,
         decoration: BoxDecoration(
             // color: Color.fromRGBO(200, 180, 0, .8),
             ),
-        child: Column(children: [
-          Icon(this.icon, color: Colors.grey[300]),
-          Separated(0, 3),
-          this.fontHome(this.text)
-        ]));
+        child: FlatButton(
+            minWidth: 100,
+            onPressed: () {},
+            child: Column(children: [
+              Separated(0, 13),
+              Icon(this.icon, color: Colors.grey[300]),
+              Separated(0, 3),
+              this.fontHome(this.text)
+            ])));
   }
 
   Widget selected() {
     return Container(
-        padding: EdgeInsets.only(top: 18, bottom: 4),
+        padding: EdgeInsets.only(top: 18, bottom: 8),
         margin: EdgeInsets.only(top: 0, bottom: 0),
         alignment: Alignment.center,
-        width: 100,
+        width: 105,
         height: 80,
         decoration: BoxDecoration(color: Colors.deepOrange[900]),
         child: Column(children: [
           Icon(this.icon, color: Colors.grey[300]),
-          Separated(0, 3.5),
+          Separated(0, 3),
           this.fontHome(this.text)
         ]));
   }
