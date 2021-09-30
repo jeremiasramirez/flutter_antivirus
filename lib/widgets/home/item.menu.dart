@@ -11,7 +11,7 @@ class ItemsMenu extends StatelessWidget {
         padding: EdgeInsets.only(top: 0, bottom: 8),
         // margin: EdgeInsets.only(top: 0, bottom: 0),
         alignment: Alignment.center,
-        width: 105,
+        width: 108,
         height: 80,
         decoration: BoxDecoration(
             // color: Color.fromRGBO(200, 180, 0, .8),

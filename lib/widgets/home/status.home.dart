@@ -15,12 +15,12 @@ class StatusHomeState extends State<StatusHome> {
     this.sizesScreen(context);
 
     return Container(
-      padding: EdgeInsets.only(top: 40),
+      padding: EdgeInsets.only(top: 4),
       alignment: Alignment.topCenter,
       decoration: BoxDecoration(
           color: Color.fromRGBO(10, 10, 10, .8),
           gradient: RadialGradient(
-              colors: [Color.fromRGBO(15, 15, 10, .8), Colors.black])),
+              colors: [Color.fromRGBO(15, 15, 10, 1), Colors.black])),
       width: this.widthScreen,
       height: this.heightScreen,
       child: this.statusItems(),
@@ -28,22 +28,24 @@ class StatusHomeState extends State<StatusHome> {
   }
 
   Widget statusItems() {
-    return Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [this.checkedStatus(), Text("Hola!!!! XD")]);
+    return Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+      this.checkedStatus(),
+      Separated(0, 30),
+      AppsHome(this.heightScreen)
+    ]);
   }
 
   Widget checkedStatus() {
     return Container(
-        width: this.widthScreen / 1.5,
-        height: this.heightScreen / 2,
+        width: this.widthScreen / 1,
+        height: 300,
         alignment: Alignment.center,
         // decoration: BoxDecoration(color: Colors.blue),
         child: Column(children: [
           this.imageStatus(),
           Separated(0, 10),
           this.textForButtonDown(),
-          // Separated(0, 60),
+          Separated(0, 40),
           this.buttonStatusChecked(),
           // Separated(0, 20),
           this.descriptionStatus()
@@ -61,16 +63,16 @@ class StatusHomeState extends State<StatusHome> {
     );
   }
 
-  BounceInUp imageStatus() {
-    return BounceInUp(
-        from: 4,
+  ZoomIn imageStatus() {
+    return ZoomIn(
+        from: .9,
         child: Icon(Icons.verified_user_outlined,
             size: 90, color: Colors.grey[500]));
   }
 
   Widget buttonStatusChecked() {
     return BounceInUp(
-        from: 4,
+        from: 6,
         child: Container(
             width: 180,
             height: 35,
@@ -89,6 +91,7 @@ class StatusHomeState extends State<StatusHome> {
 
   Widget descriptionStatus() {
     return Container(
+        padding: EdgeInsets.only(left: 20, right: 4),
         margin: EdgeInsets.only(top: 16),
         child: Text(
             "Scan your device or all kinds of security, privacy, and perfomance issues.",
@@ -101,5 +104,63 @@ class StatusHomeState extends State<StatusHome> {
       this.widthScreen = MediaQuery.of(context).size.width - 79;
       this.heightScreen = MediaQuery.of(context).size.height;
     });
+  }
+}
+
+class AppsHome extends StatelessWidget {
+  double screenHeight;
+  AppsHome(this.screenHeight);
+
+  Widget build(context) {
+    return Container(
+        width: double.infinity,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                this.app("Battery Saver", Icons.battery_charging_full),
+                this.app("Anti Track", Icons.pattern),
+                this.app("Perfomance", Icons.speed),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                this.app("Secure vpn", Icons.vpn_key),
+                this.app("Secure Browser", Icons.vpn_lock),
+                this.app("Internet security", Icons.wifi_lock),
+              ],
+            )
+          ],
+        ));
+    // decoration: BoxDecoration(color: Colors.grey[200]));
+  }
+
+  Widget app(String title, dynamic icon) {
+    return BounceInUp(
+        duration: Duration(seconds: 2),
+        child: Container(
+            width: 80,
+            height: 80,
+            margin: EdgeInsets.all(6),
+            padding: EdgeInsets.all(5),
+            decoration: BoxDecoration(
+                color: Colors.grey[900],
+                borderRadius: BorderRadius.circular(10)),
+            child:
+                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+              Icon(icon, size: 35, color: Colors.white),
+              Separated(0, 4),
+              Text(
+                title,
+                style: TextStyle(
+                  fontFamily: "ubuntu",
+                  color: Colors.white,
+                  fontSize: 11,
+                ),
+              )
+            ])));
   }
 }

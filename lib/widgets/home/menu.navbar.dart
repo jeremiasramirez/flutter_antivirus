@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 AppBar navBar() {
   return AppBar(
     centerTitle: true,
-    toolbarHeight: 40,
-    leading: logoApp(0, 35),
+    toolbarHeight: 55,
+    leading: logoApp(0, 50),
     backgroundColor: Colors.grey[900],
     title: Text("Fire Antivirus",
         style: TextStyle(
             color: Colors.white,
-            fontSize: 14,
-            fontWeight: FontWeight.w400,
+            fontSize: 22,
+            fontWeight: FontWeight.w500,
             fontFamily: "ubuntu")),
     elevation: 1.1,
   );

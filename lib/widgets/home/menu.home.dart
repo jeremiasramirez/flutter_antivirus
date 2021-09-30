@@ -27,7 +27,7 @@ class MenuHomeState extends State<MenuHome> {
   dynamic insertItems() {
     return [
       ItemsMenu(Icons.verified_user_outlined, "Status").selected(),
-      ItemsMenu(Icons.lock, "Protection"),
+      ItemsMenu(Icons.lock, "Protected"),
       ItemsMenu(Icons.fingerprint, "Privacy"),
       ItemsMenu(Icons.speed, "Tuned UP"),
       ItemsMenu(Icons.ac_unit, "CPU"),
