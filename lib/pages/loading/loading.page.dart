@@ -16,7 +16,7 @@ class LoadingFireState extends State<LoadingFirePage> {
   }
 
   void toHome(context) {
-    Future delays = Future.delayed(Duration(milliseconds: 2000), () {
+    Future delays = Future.delayed(Duration(seconds: 3), () {
       return true;
     });
 

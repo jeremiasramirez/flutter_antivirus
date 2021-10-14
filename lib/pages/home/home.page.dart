@@ -27,7 +27,7 @@ class HomeFireState extends State<HomeFirePage> {
         Safe(MenuHome()),
 
         // services
-        Safe(StatusHome())
+        Safe(StatusHome()),
       ],
     );
   }

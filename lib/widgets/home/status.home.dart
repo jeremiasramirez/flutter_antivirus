@@ -1,7 +1,7 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:fire_antivirus/helpers/separate.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+// import 'package:google_fonts/google_fonts.dart';
 
 class StatusHome extends StatefulWidget {
   StatusHomeState createState() => new StatusHomeState();
@@ -19,8 +19,8 @@ class StatusHomeState extends State<StatusHome> {
       alignment: Alignment.topCenter,
       decoration: BoxDecoration(
           color: Color.fromRGBO(10, 10, 10, .8),
-          gradient: RadialGradient(
-              colors: [Color.fromRGBO(15, 15, 10, 1), Colors.black])),
+          gradient: LinearGradient(
+              colors: [Color.fromRGBO(20, 25, 25, 1), Colors.black])),
       width: this.widthScreen,
       height: this.heightScreen,
       child: this.statusItems(),
@@ -67,7 +67,7 @@ class StatusHomeState extends State<StatusHome> {
     return ZoomIn(
         from: .9,
         child: Icon(Icons.verified_user_outlined,
-            size: 90, color: Colors.grey[500]));
+            size: 100, color: Colors.grey[300]));
   }
 
   Widget buttonStatusChecked() {
@@ -79,7 +79,8 @@ class StatusHomeState extends State<StatusHome> {
             margin: EdgeInsets.only(top: 35),
             alignment: Alignment.center,
             decoration: BoxDecoration(
-                color: Colors.green, borderRadius: BorderRadius.circular(8)),
+                color: Colors.green[800],
+                borderRadius: BorderRadius.circular(8)),
             child: Text(
               "RUN SMART SCAN",
               style: TextStyle(
@@ -129,8 +130,8 @@ class AppsHome extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 this.app("Secure vpn", Icons.vpn_key),
-                this.app("Secure Browser", Icons.vpn_lock),
-                this.app("Internet security", Icons.wifi_lock),
+                this.app("\t\t\t\t\t\t\tSecure \tBrowser", Icons.vpn_lock),
+                this.app("\tInternet security", Icons.wifi_lock),
               ],
             )
           ],
@@ -139,10 +140,11 @@ class AppsHome extends StatelessWidget {
   }
 
   Widget app(String title, dynamic icon) {
-    return BounceInUp(
+    return BounceInDown(
+        from: 2.5,
         duration: Duration(seconds: 2),
         child: Container(
-            width: 80,
+            width: 200,
             height: 80,
             margin: EdgeInsets.all(6),
             padding: EdgeInsets.all(5),
@@ -158,7 +160,7 @@ class AppsHome extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: "ubuntu",
                   color: Colors.white,
-                  fontSize: 11,
+                  fontSize: 13,
                 ),
               )
             ])));
